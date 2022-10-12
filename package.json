@@ -1,0 +1,22 @@
+{
+  "name": "zofra-challenge-back",
+  "version": "1.0.0",
+  "description": "It's a front challenge by a frontend developer job",
+  "main": "index.js",
+  "author": "Walter Daniel Huaynapata Aguilar",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "start": "nodemon index.js",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "sequelize": "^6.25.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1"
+  }
+}
