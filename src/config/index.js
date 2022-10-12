@@ -9,4 +9,4 @@ module.exports = {
   USER: process.env.USER,
   PASSWORD: process.env.PASSWORD,
   JWT_SECRET: process.env.JWT_SECRET,
-}
+};
