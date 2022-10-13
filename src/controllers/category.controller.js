@@ -11,7 +11,7 @@ class CategoryController {
   async getAll(req, res) {
     // console.log(Object.keys(req.query));
     console.log(req.query);
-    const {pageSize, pageNum} = req.query;
+    const { pageSize, pageNum } = req.query;
     const categories = await categoryService.getAll(pageSize, pageNum);
     return res.send(categories);
   }
