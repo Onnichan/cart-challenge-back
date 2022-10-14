@@ -8,6 +8,7 @@ module.exports = function () {
 
   router.get("/", ProductController.getAll);
   // router.get('/detail', ProductController.detail)
+  router.get("/:id", ProductController.getById);
   router.post("/", ProductController.create);
   router.patch("/:id", ProductController.update);
   router.delete("/:id", ProductController.delete);

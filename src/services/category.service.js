@@ -1,5 +1,6 @@
 const errorHelper = require("../helpers/error.helper");
 const categoryRepository = require("../repositories/category.repository");
+const pagingData = require("../helpers/pagingData.helper");
 
 class CategoryService {
   async getAll(pageSize, pageNum) {
@@ -39,6 +40,13 @@ class CategoryService {
     console.log(query);
     const getGenre = await categoryRepository.findByField(query);
     return getGenre;
+  }
+
+  async filteredProductsByCategory(category, limit, offset, page){
+    const products = await categoryRepository.filteredProductsByCategory(category, limit, offset);
+    // console.log(products.rows[0]['Products']);
+    const newProducts = pagingData(products, page, limit, true);
+    return newProducts;
   }
 }
 

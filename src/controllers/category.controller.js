@@ -1,4 +1,5 @@
 const categoryService = require("../services/category.service");
+const pagination = require("../helpers/pagination.helper");
 
 class CategoryController {
   async create(req, res) {
@@ -33,6 +34,14 @@ class CategoryController {
     const { id } = req.params;
     const categoryDeleted = await categoryService.delete(id);
     return res.send(categoryDeleted);
+  }
+
+  async filterProductsByCategory(req, res) {
+    const { category } = req.params;
+    const { page, size } = req.query;
+    const { limit, offset } = pagination(page, size);
+    const filteredProductsByCategory = await categoryService.filteredProductsByCategory(category,limit, offset, page);
+    return res.send(filteredProductsByCategory);
   }
 }
 

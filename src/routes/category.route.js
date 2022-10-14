@@ -7,6 +7,7 @@ module.exports = function () {
   const router = Router();
 
   router.get("/", CategoryController.getAll);
+  router.get("/:category", CategoryController.filterProductsByCategory);
   // router.get('/detail', ProductController.detail)
   router.post("/", CategoryController.create);
   router.patch("/:id", CategoryController.update);

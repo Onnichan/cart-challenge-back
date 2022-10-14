@@ -1,4 +1,4 @@
-const { ProductModel } = require("../models");
+const { ProductModel, CategoryModel } = require("../models");
 
 class ProductRepository {
   async getAll(limit, offset) {
@@ -27,6 +27,16 @@ class ProductRepository {
   async findByField(field) {
     console.log("field", field);
     const findOne = await ProductModel.findOne({ where: field });
+    return findOne;
+  }
+
+  async getById(id) {
+    console.log(id);
+    const findOne = await ProductModel.findOne({
+      where: { id },
+      include: CategoryModel,
+    });
+    console.log(findOne);
     return findOne;
   }
 }

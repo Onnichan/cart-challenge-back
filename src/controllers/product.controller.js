@@ -19,7 +19,7 @@ class ProductController {
 
   async getById(req, res) {
     const { id } = req.params;
-    const productId = productService.getById(id);
+    const productId = await productService.getById(id);
     return res.send(productId);
   }
 
