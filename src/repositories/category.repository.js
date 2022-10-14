@@ -28,7 +28,7 @@ class CategoryRepository {
     return findOne;
   }
 
-  async filteredProductsByCategory(category,limit, offset) {
+  async filteredProductsByCategory(category, limit, offset) {
     console.log(category, "in repository");
     const products = await CategoryModel.findAndCountAll({
       where: { name: category },

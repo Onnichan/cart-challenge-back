@@ -42,8 +42,12 @@ class CategoryService {
     return getGenre;
   }
 
-  async filteredProductsByCategory(category, limit, offset, page){
-    const products = await categoryRepository.filteredProductsByCategory(category, limit, offset);
+  async filteredProductsByCategory(category, limit, offset, page) {
+    const products = await categoryRepository.filteredProductsByCategory(
+      category,
+      limit,
+      offset
+    );
     // console.log(products.rows[0]['Products']);
     const newProducts = pagingData(products, page, limit, true);
     return newProducts;

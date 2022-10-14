@@ -40,7 +40,13 @@ class CategoryController {
     const { category } = req.params;
     const { page, size } = req.query;
     const { limit, offset } = pagination(page, size);
-    const filteredProductsByCategory = await categoryService.filteredProductsByCategory(category,limit, offset, page);
+    const filteredProductsByCategory =
+      await categoryService.filteredProductsByCategory(
+        category,
+        limit,
+        offset,
+        page
+      );
     return res.send(filteredProductsByCategory);
   }
 }
