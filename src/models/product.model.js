@@ -15,7 +15,7 @@ Product.init(
       allowNull: false,
     },
     price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.FLOAT(11, 2),
       allowNull: false,
     },
     image: {
